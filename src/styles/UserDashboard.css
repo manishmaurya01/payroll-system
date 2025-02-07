@@ -1,0 +1,197 @@
+/* 🔹 General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary: #007bff;
+  --secondary: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --border-color: #ddd;
+  --button-hover: #0056b3;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 🔹 Navbar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 25px;
+  border-bottom: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.top-nav .logo p {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a.active {
+  background: rgb(255, 85, 62);
+  color: white;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  background: rgb(155, 53, 40);
+  color: white;
+}
+
+/* 🔹 Profile Section */
+.profile-menu {
+  position: relative;
+}
+
+.profile-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.profile-icon:hover {
+  color: var(--primary);
+}
+
+
+.profile-menu {
+  position: relative;
+}
+
+.profile-icon {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px; /* Adjust according to your layout */
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+.profile-menu .dropdown-menu {
+  display: block; /* Show the dropdown when active */
+}
+
+.dropdown-menu button {
+  background-color: var(--primary);/* Red button for logout */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-menu button:hover {
+  background-color: var(--button-hover);
+}
+
+
+/* 🔹 Dashboard Content */
+.user-dashboard-content {
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+/* 🔹 Attendance Section */
+.attendance-section {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 35px;
+}
+
+.attendance-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* 🔹 Punch Button */
+.punch-button {
+  background: rgb(255, 85, 62);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.punch-button:hover {
+  background: rgb(170, 55, 40);
+}
+
+/* 🔹 Attendance Table */
+.attendance-table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.attendance-table th {
+  background: var(--primary);
+  color: white;
+}
+
+.attendance-table tr:nth-child(odd) {
+  background: var(--secondary);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .attendance-section {
+    padding: 15px;
+  }
+}

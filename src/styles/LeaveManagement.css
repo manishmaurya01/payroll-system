@@ -1,0 +1,185 @@
+/* Define root variables for colors */
+:root {
+  --primary-red: #FF4C4C; /* Red */
+  --sky-blue: #87CEEB; /* Sky Blue */
+  --light-gray: #f9f9f9;
+  --border-color: #ddd;
+  --dark-gray: #333;
+  --hover-red: #ff2d2d; /* Darker Red */
+  --table-header-bg: #87CEEB; /* Sky Blue */
+  --button-bg: #FF4C4C; /* Red */
+  --button-hover-bg: #ff2d2d; /* Darker Red */
+}
+
+/* General Styles */
+.leave-management-container {
+  max-width: 1200px; /* Increased width */
+  margin: 30px auto;
+  padding: 40px; /* Increased padding */
+  background: var(--light-gray);
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: var(--dark-gray);
+}
+
+.leave-management-title {
+  font-size: 32px; /* Increased font size */
+  font-weight: bold;
+  color: var(--primary-red); /* Red color */
+  text-align: center;
+  margin-bottom: 30px; /* Increased margin */
+}
+
+/* Form Styles */
+.leave-request-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased margin */
+  width: 100%;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 18px; /* Increased font size */
+  color: var(--dark-gray);
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  font-size: 18px; /* Increased font size */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.input-field:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 8px rgba(135, 206, 235, 0.5);
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 16px; /* Increased padding */
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Message Styling */
+.message-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px; /* Increased font size */
+  text-align: center;
+  font-weight: bold;
+}
+
+.message-box.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.message-box.accepted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message-box.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Table Styles */
+.leave-requests-table {
+  width: 100%;
+  margin-top: 30px; /* Increased margin */
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leave-requests-table thead {
+  background-color: var(--table-header-bg);
+  color: white;
+}
+
+.leave-requests-table th, 
+.leave-requests-table td {
+  padding: 20px; /* Increased padding */
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.leave-requests-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.leave-requests-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.leave-requests-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+/* No Data Message */
+.no-data-cell {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px; /* Increased font size */
+  color: #666;
+}
+
+/* Button Styles */
+.back-button {
+  padding: 12px 20px; /* Increased padding */
+  background-color: #f1f1f1;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  margin-bottom: 25px; /* Increased margin */
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leave-management-container {
+    width: 95%;
+    padding: 25px; /* Adjusted padding */
+  }
+
+  .leave-requests-table th, 
+  .leave-requests-table td {
+    padding: 15px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+  }
+
+  .submit-button {
+    padding: 14px; /* Adjusted padding */
+    font-size: 18px; /* Adjusted font size */
+  }
+}
