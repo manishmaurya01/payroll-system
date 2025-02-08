@@ -38,20 +38,21 @@ const ManualSalaryCounter = () => {
     const baseSalary = salaryInfo.baseSalary;
     const bonus = salaryInfo.bonus;
     const daysPresent = employee.daysPresent;
+    const totalDays = employee.totalDays;
 
     // Validate input values
-    if (!baseSalary || !bonus || !daysPresent) {
+    if (!baseSalary || !bonus || !daysPresent || !totalDays) {
       setError("Please fill in all fields.");
       return;
     }
 
-    if (isNaN(baseSalary) || isNaN(bonus) || isNaN(daysPresent)) {
+    if (isNaN(baseSalary) || isNaN(bonus) || isNaN(daysPresent) || isNaN(totalDays)) {
       setError("Please enter valid numbers.");
       return;
     }
 
-    const dailyRate = parseFloat(baseSalary) / 30; // Assuming 30 working days
-    const totalSalary = (dailyRate * parseInt(daysPresent)) + parseFloat(bonus);
+    const dailyRate = parseFloat(baseSalary) / parseFloat(totalDays);
+    const totalSalary = dailyRate * parseInt(daysPresent) + parseFloat(bonus);
 
     updatedEmployees[index].totalSalary = totalSalary.toFixed(2);
     setEmployees(updatedEmployees);
@@ -68,6 +69,7 @@ const ManualSalaryCounter = () => {
             <th className="salary-counter__th">Email</th>
             <th className="salary-counter__th">Base Salary</th>
             <th className="salary-counter__th">Bonus</th>
+            <th className="salary-counter__th">Total Days</th>
             <th className="salary-counter__th">Days Present</th>
             <th className="salary-counter__th">Total Salary</th>
             <th className="salary-counter__th">Actions</th>
@@ -102,6 +104,18 @@ const ManualSalaryCounter = () => {
                       setEmployees(updatedEmployees);
                     }}
                     placeholder="Enter bonus"
+                  />
+                </td>
+                <td className="salary-counter__td">
+                  <input
+                    type="number"
+                    value={employee.totalDays || ""}
+                    onChange={(e) => {
+                      const updatedEmployees = [...employees];
+                      updatedEmployees[index].totalDays = e.target.value;
+                      setEmployees(updatedEmployees);
+                    }}
+                    placeholder="Enter total days"
                   />
                 </td>
                 <td className="salary-counter__td">

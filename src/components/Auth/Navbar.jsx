@@ -28,6 +28,7 @@ const handleLogout = async () => {
         <div className="nav-links">
           <Link to="/admin/dashboard" className="active">Dashboard</Link>
           <Link to="/admin/atandance">Salary Report</Link>
+          <Link to="/admin/salarycounter">Manual SalaryCounter</Link>
           <Link to="/admin/leave-requests">Leave Requests</Link>
           <Link to="/admin/employee">Manage Employees</Link>
           <div className="profile-menu">
